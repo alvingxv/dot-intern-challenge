@@ -2,6 +2,50 @@ const jsonwebtoken = require("jsonwebtoken");
 const User = require('../models/user');
 const { hashSync, genSaltSync, compareSync } = require("bcrypt");
 
+exports.index = async (req, res ,next) => {
+    res.status(200).json({
+        status: 200,
+        message: "Welcome to the Task API by Alvian Ghifari for Dot Intern Challenge",
+        endpoint: [
+            {
+                method: "POST",
+                path: "/register",
+                description: "Register a new user"
+            },
+            {
+                method: "POST",
+                path: "/login",
+                description: "Login a user"
+            },
+            {
+                method: "GET",
+                path: "/task",
+                description: "Get all tasks"
+            },
+            {
+                method: "GET",
+                path: "/task/:id",
+                description: "Get a task by id"
+            },
+            {
+                method: "POST",
+                path: "/task",
+                description: "Create a new task"
+            },
+            {
+                method: "PUT",
+                path: "/task/:id",
+                description: "Update a task"
+            },
+            {
+                method: "DELETE",
+                path: "/task/:id",
+                description: "Delete a task"
+            }
+        ]
+    });
+}
+
 exports.register = async (req, res, next) => {
     try {
         const { name } = req.body;
