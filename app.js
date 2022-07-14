@@ -8,18 +8,19 @@ const { userRouter } = require('./routes/user')
 const { verifyToken } = require("./middlewares/auth")
 
 const app = express()
-
-//bodyparser
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(cors());
-
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
     .then(() => {
         console.log('connected to mongodb');
     }).catch(err => {
         console.log(err);
     });
+
+//bodyparser
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cors());
+
+
 
 const PORT = process.env.PORT || 3000
 
