@@ -4,42 +4,47 @@
 
 ### Endpoints:
 
-```json
+``` json
 {
-method: "POST",
-path: "/register",
-description: "Register a new user"
-},
-{
-method: "POST",
-path: "/login",
-description: "Login a user"
-},
-{
-method: "GET",
-path: "/task",
-description: "Get all tasks (protected)"
-},
-{
-method: "GET",
-path: "/task/:id",
-description: "Get a task by id (protected)"
-},
-{
-method: "POST",
-path: "/task",
-description: "Create a new task (protected)"
-},
-{
-method: "PUT",
-path: "/task/:id",
-description: "Update a task (protected)"
-},
-{
-method: "DELETE",
-path: "/task/:id",
-description: "Delete a task (protected)"
+  "endpoint": [
+    {
+      "method": "POST",
+      "path": "/register",
+      "description": "Register a new user"
+    },
+    {
+      "method": "POST",
+      "path": "/login",
+      "description": "Login a user"
+    },
+    {
+      "method": "GET",
+      "path": "/task",
+      "description": "Get all tasks"
+    },
+    {
+      "method": "GET",
+      "path": "/task/:id",
+      "description": "Get a task by id"
+    },
+    {
+      "method": "POST",
+      "path": "/task",
+      "description": "Create a new task"
+    },
+    {
+      "method": "PUT",
+      "path": "/task/:id",
+      "description": "Update a task"
+    },
+    {
+      "method": "DELETE",
+      "path": "/task/:id",
+      "description": "Delete a task"
+    }
+  ]
 }
+
 ```
 
 
